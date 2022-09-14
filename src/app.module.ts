@@ -1,3 +1,4 @@
+import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -5,6 +6,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -19,8 +21,13 @@ import { AuthenticationModule } from './authentication/authentication.module';
         username: configService.get('POSTGRES_USER'),
         password: configService.get('POSTGRES_PASSWORD'),
         database: configService.get('POSTGRES_DB'),
-        entities: [],
-        synchronize: true,
+        entities: [join(__dirname, '**', '*.entity.{ts,js}')],
+        namingStrategy: new SnakeNamingStrategy(),
+        ssl: false,
+    cli: {
+      migrationsDir: 'src/migration',
+    },
+    synchronize: true, //should be false at production!
       }),
       inject: [ConfigService]
     }),

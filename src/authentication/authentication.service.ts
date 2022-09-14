@@ -21,7 +21,7 @@ export class AuthenticationService {
             if (e?.code ==23505){
                 throw new HttpException("User with that email already exist", HttpStatus.BAD_REQUEST)
             }
-            throw new HttpException(`Something wen't wrong`, HttpStatus.INTERNAL_SERVER_ERROR)
+            throw new HttpException(`Something wen't wrong due to ${e}`, HttpStatus.INTERNAL_SERVER_ERROR)
         }
     } 
     
