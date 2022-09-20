@@ -12,6 +12,7 @@ export class UsersDto {
 
     @IsNotEmpty()
     phoneNumber: string;
+    
     @IsOptional()
     profile?: string;
 

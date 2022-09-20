@@ -5,7 +5,6 @@ import * as bcrypt from "bcrypt"
 @Entity()
 export class Users implements IUser{
     @PrimaryGeneratedColumn()
-    @Column({nullable: false, unique: true})
     id:number;
     
     @Column({type: "varchar", nullable:false})
