@@ -31,4 +31,10 @@ export class UsersService {
         return count 
      }
 
+     async getUserByEmail(email:string){
+        const user = await this.repository.createQueryBuilder("users").where("users.email = :email", {email})
+        .getOne();
+        return user;
+     }
+
 }
