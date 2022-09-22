@@ -8,6 +8,7 @@ import { join } from 'path';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { MeasureModule } from './measure/measure.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { MeasureModule } from './measure/measure.module';
       }),
       inject: [ConfigService]
     }),
+    MongooseModule.forRoot("mongodb://localhost:27017/measure"),
     UsersModule,
     AuthModule,
     MeasureModule,
