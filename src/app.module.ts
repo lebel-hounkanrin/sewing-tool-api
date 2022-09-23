@@ -32,7 +32,7 @@ import { MongooseModule } from '@nestjs/mongoose';
       }),
       inject: [ConfigService]
     }),
-    MongooseModule.forRoot("mongodb://localhost:27017/measure"),
+    MongooseModule.forRoot("mongodb://localhost:27017/wmeasure"),
     UsersModule,
     AuthModule,
     MeasureModule,
