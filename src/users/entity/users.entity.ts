@@ -4,14 +4,11 @@ import { Exclude } from 'class-transformer';
 import * as bcrypt from "bcrypt"
 @Entity()
 export class Users implements IUser{
-    @PrimaryGeneratedColumn()
-    id:number;
+    @PrimaryGeneratedColumn("uuid")
+    id:string;
     
     @Column({type: "varchar", nullable:false})
-    firstName: string;
-
-    @Column({type: "varchar", nullable:false})
-    lastName: string;
+    name: string;
 
     @Column({unique: true})
     email: string;
