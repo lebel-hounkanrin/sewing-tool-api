@@ -6,4 +6,7 @@ export interface IAtelier extends IBaseEntity{
     owner: IArtisan
     ifu: string
     isActive: boolean
+    pays: string
+    ville: string
+    quartier: string
 }
