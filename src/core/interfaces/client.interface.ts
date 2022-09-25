@@ -1,5 +1,5 @@
-import { Users } from 'src/users/entity/users.entity';
 import { IBaseEntity } from './ibase.entity';
+import { IUser } from './users.interface';
 export interface IClient extends IBaseEntity {
-    user:Users
+    user:IUser
 }
