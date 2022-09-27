@@ -5,9 +5,4 @@ import { Request } from 'express';
 
 @Controller('users')
 export class UsersController {
-    constructor(private readonly usersService: UsersService){}
-    @Post("create")
-    register(@Req() req:Request, @Body() user: UsersDto){
-        return this.usersService.create(user);
-    }
 }

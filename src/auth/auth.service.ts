@@ -13,13 +13,14 @@ export class AuthService {
 
     async validateUser(user: LoginDto){
         const validatedUser = await this.usersService.getUserByEmail(user.email);
+        if (!validatedUser) throw new BadRequestException("invalid email or password")
         const result = await bcrypt.compare(user.password, validatedUser.password);
         if (!result) throw new BadRequestException("invalid email or password")
         return validatedUser
     }
 
     async login(user: LoginDto){
-        const validatedUser:Users = await this.validateUser(user)
+        const validatedUser = await this.validateUser(user)
         const payload = {username: validatedUser.email, sub: validatedUser.password}
         validatedUser["payload"] = payload
         return validatedUser

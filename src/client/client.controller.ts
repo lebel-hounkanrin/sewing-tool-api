@@ -1,4 +1,10 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Post, Req } from '@nestjs/common';
 
 @Controller('client')
-export class ClientController {}
+export class ClientController {
+
+    @Post()
+    login(@Req() req: Request){
+        
+    }
+}
