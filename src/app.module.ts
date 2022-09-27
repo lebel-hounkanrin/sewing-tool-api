@@ -9,6 +9,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { MeasureModule } from './measure/measure.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ClientModule } from './client/client.module';
 
 @Module({
   imports: [
@@ -36,6 +37,7 @@ import { MongooseModule } from '@nestjs/mongoose';
     UsersModule,
     AuthModule,
     MeasureModule,
+    ClientModule,
   ],
   controllers: [AppController],
   providers: [AppService],

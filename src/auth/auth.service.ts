@@ -1,3 +1,4 @@
+import { Users } from './../users/entity/users.entity';
 import { JwtService } from '@nestjs/jwt';
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { UsersService } from 'src/users/users.service';
@@ -18,9 +19,10 @@ export class AuthService {
     }
 
     async login(user: LoginDto){
-        const validatedUser = await this.validateUser(user)
+        const validatedUser:Users = await this.validateUser(user)
         const payload = {username: validatedUser.email, sub: validatedUser.password}
-        return {access_token: this.jwtService.sign(payload)}
+        validatedUser["payload"] = payload
+        return validatedUser
     }
 
 }

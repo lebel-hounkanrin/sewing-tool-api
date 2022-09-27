@@ -1,10 +1,8 @@
 import { IsEmail, IsNotEmpty, IsOptional } from "class-validator";
 export class UsersDto {
-    @IsNotEmpty()
-    firstName: string;
 
     @IsNotEmpty()
-    lastName: string;
+    name: string;
 
     @IsNotEmpty()
     @IsEmail()
@@ -12,9 +10,6 @@ export class UsersDto {
 
     @IsNotEmpty()
     phoneNumber: string;
-    
-    @IsOptional()
-    profile?: string;
 
     @IsNotEmpty()
     password: string; 
