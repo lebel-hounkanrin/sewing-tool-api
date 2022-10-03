@@ -10,6 +10,7 @@ import { AuthModule } from './auth/auth.module';
 import { MeasureModule } from './measure/measure.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ClientModule } from './client/client.module';
+import { ArtisanModule } from './artisan/artisan.module';
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import { ClientModule } from './client/client.module';
     AuthModule,
     MeasureModule,
     ClientModule,
+    ArtisanModule,
   ],
   controllers: [AppController],
   providers: [AppService],
