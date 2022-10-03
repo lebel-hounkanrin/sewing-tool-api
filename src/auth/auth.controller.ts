@@ -5,6 +5,7 @@ import { UsersService } from 'src/users/users.service';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { LocalAuthGuard } from './local-auth.guard';
+import { Response } from 'express';
 
 @Controller('auth')
 export class AuthController {
@@ -13,8 +14,10 @@ export class AuthController {
 
     @UseGuards(LocalAuthGuard)
     @Post("login")
-    async login(@Body() user: LoginDto, @Req() req:Request){
-        return this.authService.login(user)
+    async login(@Body() user: LoginDto, @Res() res: Response){
+        const cookie =  await this.authService.login(user);
+        res.setHeader('Set-Cookie', cookie);
+        res.send({username:user.email})
     }
 
     @Post("register")

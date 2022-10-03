@@ -1,6 +1,6 @@
 import { Users } from './../users/entity/users.entity';
 import { JwtService } from '@nestjs/jwt';
-import { BadRequestException, Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable} from '@nestjs/common';
 import { UsersService } from 'src/users/users.service';
 import * as bcrypt from "bcrypt"
 import { LoginDto } from './dto/login.dto';
@@ -23,9 +23,7 @@ export class AuthService {
         //const validatedUser = await this.validateUser(user)
         const payload = {username: user.email, sub: user.password}
         const access_token= this.jwtService.sign(payload)
-        return {
-            access_token
-        }
+        return `Authentication=${access_token}; HttpOnly=true; Path=/; Max-Age=60s`
     }
 
 }
