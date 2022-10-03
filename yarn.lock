@@ -1039,10 +1039,10 @@
   "resolved" "https://registry.npmjs.org/@types/parse-json/-/parse-json-4.0.0.tgz"
   "version" "4.0.0"
 
-"@types/passport-jwt@^3.0.6":
-  "integrity" "sha512-cmAAMIRTaEwpqxlrZyiEY9kdibk94gP5KTF8AT1Ra4rWNZYHNMreqhKUEeC5WJtuN5SJZjPQmV+XO2P5PlnvNQ=="
-  "resolved" "https://registry.npmjs.org/@types/passport-jwt/-/passport-jwt-3.0.6.tgz"
-  "version" "3.0.6"
+"@types/passport-jwt@^3.0.7":
+  "integrity" "sha512-qRQ4qlww1Yhs3IaioDKrsDNmKy6gLDLgFsGwpCnc2YqWovO2Oxu9yCQdWHMJafQ7UIuOba4C4/TNXcGkQfEjlQ=="
+  "resolved" "https://registry.npmjs.org/@types/passport-jwt/-/passport-jwt-3.0.7.tgz"
+  "version" "3.0.7"
   dependencies:
     "@types/express" "*"
     "@types/jsonwebtoken" "*"
