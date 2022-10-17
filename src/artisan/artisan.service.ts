@@ -16,4 +16,18 @@ export class ArtisanService {
         artisan.user = user;
         return this.artisanRepository.save(artisan);
     }
+
+    async findAll(){
+        return this.artisanRepository.find()
+    }
+
+    async findOrCreate(user: Users){
+        const artisan = await this.artisanRepository.findOne({where: {"id" : user.id}})
+        console.log(artisan)
+        if(artisan && artisan !== null) {
+            return artisan
+        }
+        console.log("Trying to create another one")
+        return this.create(user)
+    }
 }

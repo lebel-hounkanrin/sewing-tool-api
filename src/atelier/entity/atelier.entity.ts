@@ -18,7 +18,7 @@ export class Atelier implements IAtelier{
     @Column({type: "varchar"})
     ifu: string;
 
-    @Column({type: "boolean"})
+    @Column({type: "boolean", default: false})
     isActive: boolean;
 
     @Column({type: "varchar"})

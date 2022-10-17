@@ -7,6 +7,7 @@ import { ArtisanController } from './artisan.controller';
 @Module({
   imports : [TypeOrmModule.forFeature([Artisan])],
   providers: [ArtisanService],
-  controllers: [ArtisanController]
+  controllers: [ArtisanController],
+  exports: [ArtisanService]
 })
 export class ArtisanModule {}
