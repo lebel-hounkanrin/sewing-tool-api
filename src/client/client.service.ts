@@ -13,9 +13,8 @@ export class ClientService {
         private readonly usersService: UsersService
     ){}
 
-    async create(users: Users) : Promise<Client>{
-        const client = this.clientRepository.create()
-        const user = await this.usersService.findUserById(users.id)
+    async create(user: Users) : Promise<Client>{
+        const client = this.clientRepository.create();
         client.user = user;
         return this.clientRepository.save(client);
     }
