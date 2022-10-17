@@ -11,6 +11,7 @@ import { MeasureModule } from './measure/measure.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ClientModule } from './client/client.module';
 import { ArtisanModule } from './artisan/artisan.module';
+import { AtelierModule } from './atelier/atelier.module';
 
 @Module({
   imports: [
@@ -40,6 +41,7 @@ import { ArtisanModule } from './artisan/artisan.module';
     MeasureModule,
     ClientModule,
     ArtisanModule,
+    AtelierModule,
   ],
   controllers: [AppController],
   providers: [AppService],
