@@ -7,7 +7,7 @@ export class Client implements IClient{
     @PrimaryGeneratedColumn("uuid")
     id: string
     
-    @OneToOne(()=> Users)
+    @OneToOne(()=> Users, {eager: true})
     @JoinColumn()
     user:Users  
 }
