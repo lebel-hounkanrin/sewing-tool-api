@@ -13,7 +13,7 @@ export class Atelier implements IAtelier{
     name: string;
 
     @ManyToOne(() => Artisan, (artisan) => artisan.ateliers)
-    owner: IArtisan;
+    owner: Artisan;
 
     @Column({type: "varchar"})
     ifu: string;
