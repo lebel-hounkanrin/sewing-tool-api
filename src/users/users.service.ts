@@ -36,5 +36,7 @@ export class UsersService {
         .getOne();
         return user;
      }
-
+     async findUserById(userId: string){
+        return this.repository.findOne({where: {id: userId}})
+     }
 }
